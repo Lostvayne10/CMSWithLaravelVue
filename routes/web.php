@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', 'blog');
+Route::redirect('/home', 'blog');
+Auth::routes();
+
+Route::get('blog', 'Web\PageController@blog')->name('blog');
+ 
